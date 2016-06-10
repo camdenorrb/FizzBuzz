@@ -9,6 +9,6 @@ import me.camdenorrb.fizzbuzz.runnables.FizzRunnable;
 public class FizzBuzz {
 
     public static void main(String[] args) {
-        new FizzRunnable().run();
+        new FizzRunnable().start();
     }
 }

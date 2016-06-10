@@ -3,7 +3,7 @@ package me.camdenorrb.fizzbuzz.runnables;
 /**
  * Created by kingCam on 4/7/16.
  */
-public class FizzRunnable implements Runnable {
+public class FizzRunnable extends Thread {
 
     @Override
     public void run() {
