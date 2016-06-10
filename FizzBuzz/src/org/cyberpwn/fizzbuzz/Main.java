@@ -1,6 +1,8 @@
 package org.cyberpwn.fizzbuzz;
 
+import org.cyberpwn.coolstuff.F;
 import org.cyberpwn.coolstuff.GList;
+import org.cyberpwn.coolstuff.Timer;
 
 public class Main
 {
@@ -47,5 +49,25 @@ public class Main
 		
 		//Example: Should return "This is a test."
 		new GList<String>().qadd("This").qadd("is").qadd("a").qadd("test.").reverse().reverse().toString(" ");
+	}
+	
+	public static void testc()
+	{
+		Timer t = new Timer();
+		
+		t.start();
+		
+		double key = 0;
+		
+		for(int i = 0; i < 8192; i++)
+		{
+			double k = Math.random() * (Math.random() + 6);
+			double v = Math.pow(Math.random(), k * Math.random());
+			key = Math.random() * Math.sqrt(v * k / Math.random() + 1.7665);
+		}
+		
+		t.start();
+		
+		System.out.println("Did a bunch of useless math in " + F.nsMs(t.getTime(), 5) + " milliseconds");
 	}
 }
