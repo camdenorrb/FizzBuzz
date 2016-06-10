@@ -1,5 +1,7 @@
 package org.cyberpwn.fizzbuzz;
 
+import org.cyberpwn.coolstuff.GList;
+
 public class Main
 {
 	public static void test()
@@ -13,5 +15,37 @@ public class Main
 				System.out.println("[MAIN THREAD]: ASYNC Finished, value is " + getDataOUTPUT());
 			}
 		});
+	}
+	
+	public static void testb()
+	{
+		String[] aTerribleArray = new String[]{"blah", "blahb", "blahc"};
+		
+		//You can create a GList from an array   \/\/\/\/\/\/
+		GList<String> list = new GList<String>(aTerribleArray);
+		
+		//No more Collections.reverse(list);
+		list.reverse();
+		
+		//Add and delete crap on the same invocation
+		list.qadd("Chain").qadd("add").qadd("data").qdel("delete").qdel("Chain");
+		
+		//Get a perfectly copied list, instead of cloning and casting
+		list.copy().clear();
+		
+		//Does the list have duplicates?
+		list.hasDuplicates();
+		
+		//Remove duplicates
+		list.removeDuplicates();
+		
+		//To string with commas! or whatever you want
+		list.toString(", ");
+		
+		//Add a bunch of them in one go.
+		list.add("a", "list", "of", "Strings");
+		
+		//Example: Should return "This is a test."
+		new GList<String>().qadd("This").qadd("is").qadd("a").qadd("test.").reverse().reverse().toString(" ");
 	}
 }
